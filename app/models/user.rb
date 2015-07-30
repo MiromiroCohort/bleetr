@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 require 'bcrypt'
 
 class User < ActiveRecord::Base
@@ -19,6 +19,4 @@ include BCrypt
 end # End of User classbundke
 
 
-=======
 
->>>>>>> Production_Branch
