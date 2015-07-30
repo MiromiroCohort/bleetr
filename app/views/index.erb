@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="pull-right">
+    <a href="/logout" class="btn btn-info btn-sm">Log Out</a>
+  </div>
+  <div class="pull-left">
+    <h2>bleetr</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form method="bleet" action="/bleet">
+      <fieldset>
+        <div class="form-group">
+          <label for="content" class="sr-only"></label>
+          <input type="text" id="content" name="bleet[content]"
+            placeholder="bleet, bleet" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="bleet" class="btn btn-warning">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+   <p><%= @current_user.name%></p>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-striped table-bordered">
+      <caption>
+        <img src="/img/sheep.png" alt="REST Notes" width="32" height="32"> bleets
+      </caption>
+      <tbody>
+        <tr>
+          <td>bleetr 1</td>
+        </tr>
+        <tr>
+          <td>test bleet</td>
+        </tr>
+               <tr>
+          <td>bleetr 2</td>
+        </tr>
+        <tr>
+          <td>baaaaaa</td>
+        </tr>
+         <% @bleets.each do |bleet| %>
+          <tr>
+            <td><%= glorify(@users[id: bleet.user_id].name) %></td>
+            <tr><%= glorify(bleet.content) %></tr>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

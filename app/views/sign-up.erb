@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="pull-right">
+      <a href="/login" class="btn btn-info btn-sm">Login</a>
+    </div>
+    <div class="pull-left">
+      <h2>bleetr</h2>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form method="post" action="/sign-up">
+      <fieldset>
+        <legend>Sign Up</legend>
+        <div class="form-group">
+          <label for="username" class="sr-only">Username</label>
+          <textarea id="username" name="user[username]"
+            placeholder="Enter your username" value=""
+            class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="email" class="sr-only">Email</label>
+          <input type="text" id="email" name="user[email]"
+            placeholder="Enter your email" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <input type="text" id="password" name="user[password]"
+            placeholder="Enter your password" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Sign Up" class="btn btn-warning">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

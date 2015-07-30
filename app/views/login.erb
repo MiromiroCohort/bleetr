@@ -1,0 +1,65 @@
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/pygments.css" />
+    <link rel="stylesheet" href="/css/application.css">
+    <title> bleetr</title>
+  </head>
+<div class="row">
+  <div class="row">&nbsp;</div>
+  <div class="row">&nbsp;</div>
+  <div class="row">&nbsp;</div>
+  <div class="row">&nbsp;</div>
+  <div class="col-md-3">&nbsp;</div>
+    <div class="col-md-6">
+      <div class="col-md-4">
+        <br>
+        <form method="post" action="/login">
+          <fieldset>
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="text" id="email" name="user[email]"
+                placeholder="email" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password" class="sr-only">Password</label>
+              <input type="text" id="password" name="user[password]"
+                placeholder="password" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <h3><a href="/login" class="label label-default">Log In</a></h3>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-4" style="text-align:center;">
+        <img src="/img/sheep.png" alt="bleetin' sheep" width="180" height="180">
+      </div>
+
+      <div class="col-md-4">
+        <form method="post" action="/sign-up">
+          <fieldset>
+            <div class="form-group">
+              <label for="username" class="sr-only">Username</label>
+              <input type="text" id="username" name="user[username]" placeholder="username" value="" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Email</label>
+              <input type="text" id="email" name="user[email]" placeholder="email" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="password" class="sr-only">Password</label>
+              <input type="text" id="password" name="user[password]" placeholder="password" value="" class="form-control">
+            </div>
+            <div class="form-group">
+              <h3><a href="/sign-up" class="label label-default" style="text-align:center;">Sign Up</a></h3>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  <div class="col-md-3">&nbsp;</div>
+</div>
