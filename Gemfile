@@ -15,6 +15,7 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'glorify'
 
 gem 'bcrypt'
 
