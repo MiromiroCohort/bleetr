@@ -1,0 +1,15 @@
+.sheep {
+  top: 70px;
+  left: 5%;
+  position: fixed;
+}
+
+.bleet {
+
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border: solid #000 1px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
