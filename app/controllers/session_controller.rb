@@ -1,4 +1,5 @@
 post '/session' do
+
   user = User.find_by_email(params[:user][:email])
   if user.password == params[:user][:password]
     session[:user_id] = user.id
