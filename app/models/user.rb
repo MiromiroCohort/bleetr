@@ -8,13 +8,13 @@ class User < ActiveRecord::Base
 
 include BCrypt
 
-  def password
+  def password_check
     @password ||= Password.new(password)
   end
 
   def password=(new_password)
     @password =Password.create(new_password)
-    self.digest = @password
+    self.password = @password
   end
 end # End of User classbundke
 

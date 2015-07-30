@@ -9,7 +9,8 @@ post '/session' do
 end
 
 
+
 delete '/session' do
   session[:user_id] = nil
-  redirect '/'
+  redirect '/login'
 end

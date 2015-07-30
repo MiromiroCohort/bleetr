@@ -5,7 +5,8 @@ before '/bleets*' do
 end
 
 post '/bleets' do
-  Bleet.create params[:bleet]
+  params
+  Bleet.create(params[:bleet])
   redirect '/'
 end
 

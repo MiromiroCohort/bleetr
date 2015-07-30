@@ -1,7 +1,7 @@
 class CreateBleets < ActiveRecord::Migration
   def change
     create_table :bleets do |t|
-      t.text :content
+      t.text :content #string?
       t.references :user
 
       t.timestamps null: false

@@ -17,7 +17,7 @@
     <div class="col-md-6">
       <div class="col-md-4">
         <br>
-        <form method="post" action="/login">
+        <form method="get" action="/">
           <fieldset>
             <div class="form-group">
               <label for="email" class="sr-only">Email</label>
@@ -30,8 +30,9 @@
                 placeholder="password" value="" class="form-control">
             </div>
             <div class="form-group">
-              <h3><a href="/login" class="label label-default">Log In</a></h3>
-            </div>
+            <input type="submit" value="Log in" class="btn btn-success">
+              <!-- <h3><a href="/" class="label label-default">Log In</a></h3>
+            </div> -->
           </fieldset>
         </form>
       </div>
@@ -40,11 +41,11 @@
       </div>
 
       <div class="col-md-4">
-        <form method="post" action="/sign-up">
+        <form method="post" action="/users">
           <fieldset>
             <div class="form-group">
               <label for="username" class="sr-only">Username</label>
-              <input type="text" id="username" name="user[username]" placeholder="username" value="" class="form-control"></textarea>
+              <input type="text" id="name" name="user[name]" placeholder="username" value="" class="form-control"></textarea>
             </div>
             <div class="form-group">
               <label for="email" class="sr-only">Email</label>
@@ -55,7 +56,7 @@
               <input type="text" id="password" name="user[password]" placeholder="password" value="" class="form-control">
             </div>
             <div class="form-group">
-              <h3><a href="/sign-up" class="label label-default" style="text-align:center;">Sign Up</a></h3>
+              <input type="submit" value="Sign up" class="btn btn-success">
             </div>
           </fieldset>
         </form>

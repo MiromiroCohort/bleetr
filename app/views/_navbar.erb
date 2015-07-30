@@ -14,7 +14,13 @@
         <li class="active"><a href="#">Home</a></li>
         <li><a href="/paddock">the paddock</a></li>
         <li><a href="/flock">my flock</a></li>
-          <li><a href="/logout">logout</a></li>
+          <!-- <li><a href="/session">logout</a></li> -->
+        <li>
+          <form action='/session' method='post'>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form>
+        </li>
       </ul>
     </div>
   </div>
