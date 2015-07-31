@@ -1,3 +1,0 @@
-<% @bleets_to_print.each do |bleet| %>
-  <p><%= User.find_by(id: bleet.user_id).name %> <%= bleet.content%></p>
-<% end %>
