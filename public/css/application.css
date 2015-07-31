@@ -28,3 +28,8 @@ body {
   float: right;
   padding: 5px 40px 0 0;
 }
+.titleText{
+  font-family: 'Coustard', serif;
+  font-size: 200px;
+  text-align: center;
+}
