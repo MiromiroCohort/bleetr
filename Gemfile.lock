@@ -49,7 +49,6 @@ GEM
       rack (>= 1.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     rdoc-rouge (0.1.0)
       rdoc (~> 4.0)
       rouge (~> 0.3.0)
@@ -114,3 +113,6 @@ DEPENDENCIES
   sinatra
   sinatra-contrib
   sinatra-partial
+
+BUNDLED WITH
+   1.10.6

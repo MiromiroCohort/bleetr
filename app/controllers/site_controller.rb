@@ -30,7 +30,14 @@ end
 
 post '/follow' do
   FollowRelationship.create(user_id: session[:user_id], follower_id: params[:user_id])
+  @bleets_to_print = []
+  User.all.each do |sheep|
+    sheep.bleets.each do |bleet|
+      @bleets_to_print << bleet
+    end
+  end
   erb :paddock
+  redirect '/paddock'
 end
 
 
@@ -44,11 +51,11 @@ get '/flock' do
   #flock = User.first.followers
   flock = User.find_by(id: session[:user_id]).followers
   @bleets_to_print = []
-    flock.each do |sheep|
-      sheep.bleets.each do |bleet|
-        @bleets_to_print << bleet
-      end
+  flock.each do |sheep|
+    sheep.bleets.each do |bleet|
+      @bleets_to_print << bleet
     end
+  end
   @bleets_to_print.sort_by!{|bleet| bleet.created_at}
   @bleets_to_print.reverse!
   #find_by user_id: 1 #session[:user_id]
@@ -59,11 +66,11 @@ get '/paddock' do
   @current_user = User.find_by id: session[:user_id]
   @paddock_page = true
   @bleets_to_print = []
-    User.all.each do |sheep|
-      sheep.bleets.each do |bleet|
-        @bleets_to_print << bleet
-      end
+  User.all.each do |sheep|
+    sheep.bleets.each do |bleet|
+      @bleets_to_print << bleet
     end
+  end
   @bleets_to_print.sort_by!{|bleet| bleet.created_at}
   @bleets_to_print.reverse!
   erb :paddock
