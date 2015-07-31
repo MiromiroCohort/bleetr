@@ -6,6 +6,14 @@ before '/' do
   redirect '/login' unless session[:user_id]
 end
 
+before '/flock' do
+  redirect '/login' unless session[:user_id]
+end
+
+before '/paddock' do
+  redirect '/login' unless session[:user_id]
+end
+
 get '/login' do
   erb :login
 end
