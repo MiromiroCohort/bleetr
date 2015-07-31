@@ -1,0 +1,30 @@
+body {
+  padding-top: 100px;
+}
+
+.sheep {
+  top: 70px;
+  left: 5%;
+  position: fixed;
+}
+
+.bleet {
+  font-size: 20px;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border: solid #000 1px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.bleetText {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.col-md-4 col-md-offset-4 {
+  padding: 10px 10px 10px 10px;
+
+}

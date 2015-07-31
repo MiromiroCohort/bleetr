@@ -7,6 +7,7 @@ gem 'pg'
 gem 'rack', '1.5.2'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-partial'
 
 gem 'activesupport'
 gem 'activerecord'
@@ -14,6 +15,9 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'glorify'
+
+gem 'bcrypt'
 
 group :test do
   gem 'shoulda-matchers'

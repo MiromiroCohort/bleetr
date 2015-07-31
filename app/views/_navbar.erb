@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      </button>
+      <a class="navbar-brand">bleetr</a>
+    </div>
+    <div class="navbar-collapse collapse">
+
+
+    <!-- *************** FLOCK NAVBAR *************** -->
+
+    <% if @flock_page == true %>
+      <ul class="nav navbar-nav">
+        <li><a href="#"><%= @current_user.name %></a></li>
+        <li><a href="/paddock">the paddock</a></li>
+        <li class="active"><a href="/flock">my flock</a></li>
+        <li><form action='/session' method='post'>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form></li>
+        </li>
+      </ul>
+    <%end%>
+
+
+
+
+      <!-- *************** PADDOCK NAVBAR *************** -->
+    <% if @paddock_page == true %>
+      <ul class="nav navbar-nav">
+        <li><a href="/flock"><%= @current_user.name %></a></li>
+        <li class="active"><a href="/paddock">the paddock</a></li>
+        <li ><a href="/flock">my flock</a></li>
+          <li><form action='/session' method='post'>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout">
+          </form></li>
+        </li>
+      </ul>
+    <%end%>
+
+      <!-- *************** SINGLE USER PAGE NAVBAR *************** -->
+
+    </div>
+  </div>
+</nav>

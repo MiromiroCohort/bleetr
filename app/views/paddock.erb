@@ -1,0 +1,48 @@
+<%= partial :navbar %>
+ <div class="container">
+  <div class="row sheep">
+    <div class="col-md-2" style="text-align:center;">
+    </div>
+  </div>
+
+
+  <div class="row bleets">
+    <div class="col-md-4 col-md-offset-4">
+       <img src="/img/sheep.png" style="display: block; margin: 0 auto; padding: 10px 10px 50px 10px; width: 200; height: 200;">.
+      <form method="post" action="/bleets">
+        <fieldset>
+          <div class="form-group">
+            <label for="content" class="sr-only">Content</label>
+            <input type="text" id="content" name="bleet[content]"
+              placeholder="bleet, bleet" value="" class="form-control">
+            <input type="hidden" name="bleet[user_id]" value="user.id">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="bleet" class="btn btn-warning">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h2>word on the paddock is....</h2><br>
+        <% @bleets_to_print.each do |bleet| %>
+        <form method="post" action="/follow">
+          <input type="hidden" name="user_id" value="<%= bleet.user.id %>">
+          <input type="submit" value="follow" class="btn btn-info">
+        </form>
+        <div class ="bleet">
+          <p><%= bleet.user.name %> </p>
+          <div class ="bleetText">
+            <p><%= bleet.content %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
