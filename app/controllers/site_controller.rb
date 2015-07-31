@@ -32,6 +32,7 @@ end
 
 get '/flock' do
   @flock_page = true
+  @current_user = User.find_by id: session[:user_id]
   flock = User.first.followers
   #flock = User.find_by(id: session[:user_id]).followers
   @bleets_to_print = []
@@ -47,6 +48,7 @@ get '/flock' do
 end
 
 get '/paddock' do
+  @current_user = User.find_by id: session[:user_id]
   @paddock_page = true
   @bleets_to_print = []
     User.all.each do |sheep|

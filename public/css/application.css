@@ -24,6 +24,7 @@ body {
   font-weight: 400;
 }
 
-.bleets {
-}
+.col-md-4 col-md-offset-4 {
+  padding: 10px 10px 10px 10px;
 
+}
