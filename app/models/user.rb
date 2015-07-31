@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :follow_relationships
   has_many :followers, through: :follow_relationships, :foreign_key => 'follower_id'
 
-include BCrypt
+# include BCrypt
 
   def password
     @password ||= Password.new(digest)
@@ -16,6 +16,7 @@ include BCrypt
     @password = Password.create(new_password)
     self.digest = @password
   end
+
 end # End of User classbundke
 
 

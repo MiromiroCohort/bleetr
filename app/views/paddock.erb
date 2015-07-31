@@ -1,24 +1,13 @@
-<html lang=en"en">
-
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/pygments.css" />
-    <link rel="stylesheet" href="/css/application.css">
-    <title> bleetr</title>
-  </head>
- <%= partial :navbar %>
-
+<%= partial :navbar %>
+ <div class="container">
   <div class="row sheep">
     <div class="col-md-2" style="text-align:center;">
       <img src="/img/sheep.png" alt="bleetin sheep" width="200" height="200" >
     </div>
   </div>
 
-  <div class="row">
+
+  <div class="row bleets">
     <div class="col-md-4 col-md-offset-4">
       <form method="post" action="/bleets">
         <fieldset>
@@ -35,25 +24,24 @@
     </div>
   </div>
 
-  <div class="row">
+
+  <div class="row bleets">
     <div class="col-md-4 col-md-offset-4">
-        <h3>word on the paddock is....</h3><br>
+        <h2>word on the paddock is....</h2><br>
         <% @bleets_to_print.each do |bleet| %>
+        <form method="post" action="/follow">
+          <input type="hidden" name="user_id" value="<%= bleet.user.id %>">
+          <input type="submit" value="follow" class="btn btn-info">
+        </form>
         <div class ="bleet">
-          <h3><%= bleet.user.name %> </h3>
-          <form method="post" action="/follow">
-              <input type="hidden" id="user_id" value ="bleet.user.name">
-              <input type="submit" value="follow" class="btn btn-warning">
-          </form>
-          <p><%= bleet.content%></p>
+          <p><%= bleet.user.name %> </p>
+          <div class ="bleetText">
+            <p><%= bleet.content %></p>
+          </div>
         </div>
-        <%end%>
+      <% end %>
     </div>
   </div>
+</div>
 
 
-
-
-           <!--  -->
-          <!--Here needs to be a button saying 'follow', lets copy-paste the bleet button for now, Connor can reformat (thanks Connor)
-           which needs to pass the id of the user whose name is on the button to the post method which creates a follower relationship -->

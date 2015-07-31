@@ -11,10 +11,10 @@ get '/login' do
 end
 
 get '/' do
-  #@flock = User.all
+  @flock = User.all
   @current_user = User.find_by id: session[:user_id]
   @bleets = Bleet.all.order('created_at DESC')
-  erb :test_index
+  redirect '/paddock'
 end
 
 
