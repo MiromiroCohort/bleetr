@@ -21,7 +21,12 @@ end
 
 
 post '/follow' do
+  FollowRelationship.create(user_id: session[:user_id], follower_id: params[:user_id])
+  erb :paddock
 end
+
+
+
 
 get '/flock' do
   @flock_page = true
@@ -36,7 +41,6 @@ get '/flock' do
   @bleets_to_print.sort_by!{|bleet| bleet.created_at}
   @bleets_to_print.reverse!
   #find_by user_id: 1 #session[:user_id]
-  puts @flock
   erb :flock
 end
 
@@ -50,7 +54,6 @@ get '/paddock' do
     end
   @bleets_to_print.sort_by!{|bleet| bleet.created_at}
   @bleets_to_print.reverse!
-
   erb :paddock
 end
 
