@@ -1,6 +1,13 @@
  <%= partial :navbar %>
  <div class="container">
+  <div class="flock" style="float: left">
+    <h2>your flock</h2>
+    <% @flock.each do |sheep| %>
+      <p><%= sheep.name %></p>
+      <% end %>
+    </div>
   <div class="row bleets">
+
     <div class="col-md-7" style="float: none; margin: 0px auto;">
        <img src="/img/flock.png" style="display: block; margin: 0 auto; padding: 10px 10px 50px 10px; width: 500px; height: 350px;">
       <form method="post" action="/bleets">

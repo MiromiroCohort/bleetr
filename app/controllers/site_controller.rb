@@ -49,13 +49,14 @@ get '/flock' do
   @flock_page = true
   @current_user = User.find_by id: session[:user_id]
   #flock = User.first.followers
-  flock = User.find_by(id: session[:user_id]).followers
+  @flock = User.find_by(id: session[:user_id]).followers
   @bleets_to_print = []
-  flock.each do |sheep|
+  @flock.each do |sheep|
     sheep.bleets.each do |bleet|
       @bleets_to_print << bleet
     end
   end
+
   @bleets_to_print.sort_by!{|bleet| bleet.created_at}
   @bleets_to_print.reverse!
   #find_by user_id: 1 #session[:user_id]
@@ -76,13 +77,12 @@ get '/paddock' do
   erb :paddock
 end
 
-# get '/1' do
-# #get '/:id'
-#   @single_user_page = true
-#   @bleets_to_print = []
-#   User.find_by(id: 1).bleets.each do |bleet|
-#   #User.find_by(id: session[:user_id]).bleets.each do |bleet|
-#     @bleets_to_print << bleet
-#   end
-#   erb :single_user
-# end
+get '/single_user' do
+  @current_user = User.find_by id: session[:user_id]
+  @single_user_page = true
+  @bleets_to_print = []
+  User.find_by(id: session[:user_id]).bleets.each do |bleet|
+    @bleets_to_print << bleet
+  end
+  erb :single_user
+end

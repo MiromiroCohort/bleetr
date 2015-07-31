@@ -12,12 +12,12 @@
 
     <% if @flock_page == true %>
       <ul class="nav navbar-nav">
-        <li><a href="#"><%= @current_user.name %></a></li>
+        <li><a href="/single_user"><%= @current_user.name %></a></li>
         <li><a href="/paddock">the paddock</a></li>
         <li class="active"><a href="/flock">my flock</a></li>
         <li><form action='/session' method='post'>
             <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Logout">
+            <input type="submit" value="Logout" class="logout_button" style="position: absolute; left: 830px; ">
           </form></li>
         </li>
       </ul>
@@ -29,7 +29,7 @@
       <!-- *************** PADDOCK NAVBAR *************** -->
     <% if @paddock_page == true %>
       <ul class="nav navbar-nav">
-        <li><a href="/flock"><%= @current_user.name %></a></li>
+        <li><a href="/single_user"><%= @current_user.name %></a></li>
         <li class="active"><a href="/paddock">the paddock</a></li>
         <li ><a href="/flock">my flock</a></li>
           <li><form action='/session' method='post'>
@@ -41,6 +41,18 @@
     <%end%>
 
       <!-- *************** SINGLE USER PAGE NAVBAR *************** -->
+    <% if @single_user_page == true %>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/single_user"><%= @current_user.name %></a></li>
+        <li><a href="/paddock">the paddock</a></li>
+        <li ><a href="/flock">my flock</a></li>
+          <li><form action='/session' method='post'>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Logout" class="logout_button" style="position: absolute; left: 830px; ">
+          </form></li>
+        </li>
+      </ul>
+    <%end%>
 
     </div>
   </div>
