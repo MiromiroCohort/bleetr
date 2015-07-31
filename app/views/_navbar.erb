@@ -14,10 +14,10 @@
       <ul class="nav navbar-nav">
         <li><a href="/paddock">the paddock</a></li>
         <li class="active"><a href="/flock">my flock</a></li>
-          <form action='/session' method='post'>
+          <li><form action='/session' method='post'>
             <input type="hidden" name="_method" value="delete">
-            <input type="button" value="Logout" class="btn btn-success">
-          </form>
+            <input type="button" value="Logout" class="btn btn-success navbar-right">
+          </form></li>
         </li>
       </ul>
     <%end%>
@@ -29,10 +29,10 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/paddock">the paddock</a></li>
         <li ><a href="/flock">my flock</a></li>
-          <form action='/session' method='post'>
+          <li><form action="/session" method="post" >
             <input type="hidden" name="_method" value="delete">
-            <input type="button" value="Logout" class="btn btn-success">
-          </form>
+            <input type="button" value="Logout" class="btn btn-success navbar-right">
+          </form></li>
         </li>
       </ul>
     <%end%>

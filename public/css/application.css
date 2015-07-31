@@ -1,3 +1,7 @@
+body {
+  padding-top: 100px;
+}
+
 .sheep {
   top: 70px;
   left: 5%;
@@ -5,7 +9,7 @@
 }
 
 .bleet {
-
+  font-size: 20px;
   width: 100%;
   height: auto;
   padding: 5px;
@@ -13,3 +17,13 @@
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
+.bleetText {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.bleets {
+}
+
