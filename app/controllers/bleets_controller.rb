@@ -6,8 +6,9 @@ end
 
 post '/bleets' do
   params
-  Bleet.create(params[:bleet])
-  redirect '/'
+  bleet = Bleet.create(params[:bleet])
+  bleet.user_id.to_s
+  #redirect '/'
 end
 
 delete 'bleets/:id' do

@@ -33,8 +33,8 @@ end
 get '/flock' do
   @flock_page = true
   @current_user = User.find_by id: session[:user_id]
-  flock = User.first.followers
-  #flock = User.find_by(id: session[:user_id]).followers
+  #flock = User.first.followers
+  flock = User.find_by(id: session[:user_id]).followers
   @bleets_to_print = []
     flock.each do |sheep|
       sheep.bleets.each do |bleet|
@@ -61,13 +61,13 @@ get '/paddock' do
   erb :paddock
 end
 
-get '/1' do
-#get '/:id'
-  @single_user_page = true
-  @bleets_to_print = []
-  User.find_by(id: 1).bleets.each do |bleet|
-  #User.find_by(id: session[:user_id]).bleets.each do |bleet|
-    @bleets_to_print << bleet
-  end
-  erb :single_user
-end
+# get '/1' do
+# #get '/:id'
+#   @single_user_page = true
+#   @bleets_to_print = []
+#   User.find_by(id: 1).bleets.each do |bleet|
+#   #User.find_by(id: session[:user_id]).bleets.each do |bleet|
+#     @bleets_to_print << bleet
+#   end
+#   erb :single_user
+# end
