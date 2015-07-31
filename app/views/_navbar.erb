@@ -15,10 +15,10 @@
         <li><a href="#"><%= @current_user.name %></a></li>
         <li><a href="/paddock">the paddock</a></li>
         <li class="active"><a href="/flock">my flock</a></li>
-        <li><a><form action='/session' method='post'>
+        <li><form action='/session' method='post'>
             <input type="hidden" name="_method" value="delete">
-            <input type="button" value="Logout" class="logout_button">
-          </form></a></li>
+            <input type="submit" value="Logout">
+          </form></li>
         </li>
       </ul>
     <%end%>
@@ -32,10 +32,10 @@
         <li><a href="/flock"><%= @current_user.name %></a></li>
         <li class="active"><a href="/paddock">the paddock</a></li>
         <li ><a href="/flock">my flock</a></li>
-          <li><a><form action="/session" method="post" >
+          <li><form action='/session' method='post'>
             <input type="hidden" name="_method" value="delete">
-            <input type="button" value="Logout" class="logout_button">
-          </form></a></li>
+            <input type="submit" value="Logout">
+          </form></li>
         </li>
       </ul>
     <%end%>

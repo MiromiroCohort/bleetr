@@ -5,10 +5,9 @@ before '/bleets*' do
 end
 
 post '/bleets' do
-  params
-  bleet = Bleet.create(params[:bleet])
-  bleet.user_id.to_s
-  #redirect '/'
+  @user = User.find(session[:user_id])
+  @user.bleets << Bleet.create(params[:bleet])
+  redirect '/'
 end
 
 delete 'bleets/:id' do
